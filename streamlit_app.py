@@ -3,6 +3,9 @@ import streamlit as st
 #from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col, when_matched
 
+cnx = st.connection("snowflake")
+session = cnx.session()
+
 # Write directly to the app
 st.title(":boom: Mel's Custom Smoothies :boom:")
 # MLT: Write a formatted markdown string to the screen.
@@ -12,8 +15,7 @@ st.write(
     Smoothie!** 
     """
 )
-cnx = st.connection("snowflake")
-session = cnx.session()
+
 #Orignal session created in snowflake
 #session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
