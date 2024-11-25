@@ -19,7 +19,7 @@ st.write(
 
 #Orignal session created in snowflake
 #session = get_active_session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col(SEARCH_ON))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
 
 ##My Addition
 name_on_order = st.text_input('Name on Smoothie: ')
