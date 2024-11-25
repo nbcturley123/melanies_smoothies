@@ -3,7 +3,7 @@ import streamlit as st
 #from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col, when_matched
 import requests
-import Pandas as pd
+import pandas as pd
 
 cnx = st.connection("snowflake")
 session = cnx.session()
